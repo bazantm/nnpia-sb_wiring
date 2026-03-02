@@ -9,10 +9,11 @@ public class Vehicle {
 
     private String name;
 
-    @Autowired //field injection //@Autowired(required = false)
-    private Engine engine;
+    private final Engine engine;
 
-    public Vehicle() {
+    @Autowired
+    public Vehicle(Engine engine) {
+        this.engine = engine;
         System.out.println("Vehicle bean created by Spring");
     }
 
@@ -28,9 +29,10 @@ public class Vehicle {
         return engine;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-    }
+//    @Autowired
+//    public void setEngine(Engine engine) {
+//        this.engine = engine;
+//    }
 
     public void seyHello() {
         System.out.println("hello from component Vehicle bean");
