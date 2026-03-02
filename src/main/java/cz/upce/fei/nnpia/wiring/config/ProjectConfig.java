@@ -16,10 +16,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    Person person() { // Using method parameters
+    Person person() {
         Person person = new Person();
         person.setName("Lucy");
-//        person.setVehicle(vehicle()); //manual wiring
+//        person.setVehicle(vehicle()); //manual wiring pomoc volani metody (method call)
         return person;
     }
 
