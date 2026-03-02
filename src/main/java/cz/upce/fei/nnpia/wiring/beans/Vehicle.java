@@ -1,8 +1,16 @@
 package cz.upce.fei.nnpia.wiring.beans;
 
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Vehicle {
 
     private String name;
+
+    @Autowired //field injection //@Autowired(required = false)
+    private Engine engine;
 
     public Vehicle() {
         System.out.println("Vehicle bean created by Spring");
@@ -16,8 +24,21 @@ public class Vehicle {
         this.name = name;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
     public void seyHello() {
         System.out.println("hello from component Vehicle bean");
+    }
+
+    @PostConstruct
+    public void initialize() {
+        this.name = "Kia";
     }
 
     @Override
