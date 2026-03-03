@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 public class Vehicle {
 
     private String name;
-
-    @Autowired //field injection //@Autowired(required = false)
     private Engine engine;
 
     public Vehicle() {
@@ -28,6 +26,7 @@ public class Vehicle {
         return engine;
     }
 
+    @Autowired
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
