@@ -19,7 +19,7 @@ public class ProjectConfig {
     Person person() {
         Person person = new Person();
         person.setName("Lucy");
-//        person.setVehicle(vehicle()); //manual wiring pomoc volani metody (method call)
+        //person.setVehicle(vehicle()); //manual wiring pomoci volani metody (method call)
         return person;
     }
 
